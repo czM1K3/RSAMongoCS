@@ -12,7 +12,7 @@ namespace Mongo
         
         public DbConnector()
         {
-            var dbClient = new MongoClient("mongodb://192.168.1.52:27017");
+            var dbClient = new MongoClient(Environment.GetEnvironmentVariable("MongoDBConnectionString"));
             var database = dbClient.GetDatabase("caprsa");
             collection = database.GetCollection<BsonDocument>("keys");
         }

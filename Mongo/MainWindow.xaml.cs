@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Windows;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
@@ -15,14 +16,18 @@ namespace Mongo
         public MainWindow()
         {
             InitializeComponent();
+        }
 
-            DbConnector connector = new DbConnector();
-            //connector.Insert(new EncryptedItem("Ahoj2", "key", "zprava"));
-            var founded = connector.FindAll();
-            foreach (var encryptedItem in founded)
-            {
-                tbTest.Text += encryptedItem.Text + "\n";
-            }
+        private void BtnCreate_OnClick(object sender, RoutedEventArgs e)
+        {
+            Create createWindow = new Create();
+            createWindow.ShowDialog();
+        }
+
+        private void BtnGet_OnClick(object sender, RoutedEventArgs e)
+        {
+            Get getWindow = new Get();
+            getWindow.ShowDialog();
         }
     }
 }

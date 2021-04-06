@@ -116,6 +116,16 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
+        <Compile Include="Item.xaml.cs">
+          <DependentUpon>Item.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Popup.xaml.cs">
+          <DependentUpon>Popup.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="RSA.cs" />
+        <Page Include="Create.xaml" />
+        <Page Include="Get.xaml" />
+        <Page Include="Item.xaml" />
         <Page Include="MainWindow.xaml">
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
@@ -124,12 +134,19 @@
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Compile Include="Create.xaml.cs">
+          <DependentUpon>Create.xaml</DependentUpon>
+        </Compile>
         <Compile Include="DbConnector.cs" />
         <Compile Include="EncryptedItem.cs" />
+        <Compile Include="Get.xaml.cs">
+          <DependentUpon>Get.xaml</DependentUpon>
+        </Compile>
         <Compile Include="MainWindow.xaml.cs">
             <DependentUpon>MainWindow.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Page Include="Popup.xaml" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Properties\AssemblyInfo.cs">

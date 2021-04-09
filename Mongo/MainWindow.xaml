@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mongo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="100" Width="200" ResizeMode="NoResize">
+        Title="Menu" Height="100" Width="200" ResizeMode="NoResize">
     <Grid>
         <Button Name="btnCreate" Width="50" Height="20" Click="BtnCreate_OnClick" Margin="0,0,0,20">Create</Button>
         <Button Name="btnGet" Width="50" Height="20" Click="BtnGet_OnClick" Margin="0,20,0,0">Get</Button>

@@ -8,7 +8,8 @@ namespace Mongo
         {
             InitializeComponent();
             var decrypted = RSA.Decrypt(ei.Text, ei.PrivateKey);
-            lblText.Content = ei.Alias + " - " + decrypted;
+            lblText.Content = ei.Alias;
+            tbText.Text = decrypted;
         }
     }
 }

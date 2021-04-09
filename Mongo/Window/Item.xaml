@@ -10,7 +10,8 @@
         <Border Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1">
             <Grid>
                 <Label Name="lblNickname">Text</Label>
-                <Button Name="btnGet" HorizontalAlignment="Right" VerticalAlignment="Top" Width="40" Height="25" Click="BtnGet_OnClick">Get</Button>
+                <Button Name="btnGet" HorizontalAlignment="Right" VerticalAlignment="Top" Width="40" Height="25" Margin="0,0,52,0" Click="BtnGet_OnClick">Get</Button>
+                <Button Name="btnDelete" HorizontalAlignment="Right" VerticalAlignment="Top" Width="50" Height="25" Click="BtnDelete_OnClick">Delete</Button>
             </Grid>
         </Border>
     </Grid>

@@ -31,5 +31,10 @@ namespace Mongo
         {
             return collection.Find(new BsonDocument()).ToEnumerable().Select(x => new EncryptedItem(x["text"].ToString(), x["privateKey"].ToString(), x["alias"].ToString())).ToList();
         }
+
+        public void Remove(EncryptedItem item)
+        {
+            collection.DeleteOne(Builders<BsonDocument>.Filter.Eq("text", item.Text));
+        }
     }
 }

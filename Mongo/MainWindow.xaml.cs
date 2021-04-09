@@ -11,22 +11,23 @@ namespace Mongo
     /// </summary>
     public partial class MainWindow
     {
-        
+        private DbConnector connector;
         
         public MainWindow()
         {
             InitializeComponent();
+            connector = new DbConnector();
         }
 
         private void BtnCreate_OnClick(object sender, RoutedEventArgs e)
         {
-            Create createWindow = new Create();
+            Create createWindow = new Create(connector);
             createWindow.ShowDialog();
         }
 
         private void BtnGet_OnClick(object sender, RoutedEventArgs e)
         {
-            Get getWindow = new Get();
+            Get getWindow = new Get(connector);
             getWindow.ShowDialog();
         }
     }

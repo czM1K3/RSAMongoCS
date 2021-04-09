@@ -5,9 +5,12 @@ namespace Mongo
 {
     public partial class Create : Window
     {
-        public Create()
+        private DbConnector connector;
+        
+        public Create(DbConnector connector)
         {
             InitializeComponent();
+            this.connector = connector;
         }
 
         private void BtnSend_OnClick(object sender, RoutedEventArgs e)
@@ -20,7 +23,6 @@ namespace Mongo
             var nickname = tbNickname.Text;
             var encryptedText = RSA.Encrypt(text, publicKey);
 
-            DbConnector connector = new DbConnector();
             connector.Insert(new EncryptedItem(encryptedText, privateKey, nickname));
 
             Close();

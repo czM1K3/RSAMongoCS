@@ -6,9 +6,12 @@ namespace Mongo
 {
     public partial class Get : Window
     {
-        public Get()
+        private DbConnector connector;
+        
+        public Get(DbConnector connector)
         {
             InitializeComponent();
+            this.connector = connector;
         }
 
         private void SwScroll_OnLoaded(object sender, RoutedEventArgs e)
@@ -24,7 +27,7 @@ namespace Mongo
             grid.Margin = new Thickness(5);
             for (int i = 0; i < list.Count; i++)
             {
-                grid.Children.Add(new Item(list[i], this)
+                grid.Children.Add(new Item(list[i], this, connector)
                 {
                     Margin = new Thickness(10, i * 30, 0, 0),
                     VerticalAlignment = VerticalAlignment.Top,

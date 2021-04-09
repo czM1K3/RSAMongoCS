@@ -6,13 +6,15 @@ namespace Mongo
     public partial class Item : UserControl
     {
         private Get windowGet;
+        private DbConnector connector;
         
-        public Item(EncryptedItem ei, Get windowGet)
+        public Item(EncryptedItem ei, Get windowGet, DbConnector connector)
         {
             InitializeComponent();
             lblNickname.Content = ei.Alias;
             Tag = ei;
             this.windowGet = windowGet;
+            this.connector = connector;
         }
 
         private void BtnGet_OnClick(object sender, RoutedEventArgs e)
@@ -23,7 +25,6 @@ namespace Mongo
 
         private void BtnDelete_OnClick(object sender, RoutedEventArgs e)
         {
-            DbConnector connector = new DbConnector();
             connector.Remove((EncryptedItem) Tag);
             windowGet.updateData();
         }
